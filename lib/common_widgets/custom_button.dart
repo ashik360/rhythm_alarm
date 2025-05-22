@@ -5,7 +5,7 @@ import 'package:rhythm_alarm/constants/app_constants.dart';
 class CustomBtnWidget extends StatelessWidget {
   final String btnName;
   final String btnImg;
-  final VoidCallback? onPressed; // <-- New field for custom behavior
+  final VoidCallback? onPressed;
 
   const CustomBtnWidget({
     super.key,
@@ -17,7 +17,7 @@ class CustomBtnWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: onPressed, // <-- Use passed callback instead of hardcoded navigation
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.deepGrey,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),

@@ -29,7 +29,6 @@ class WelcomeScreen extends StatelessWidget {
     try {
       final location = await LocationHelper.getCurrentLocationAddress();
       
-      // Check for error messages from LocationHelper
       if (location == null || 
           location.contains('disabled') ||
           location.contains('denied') ||
@@ -40,7 +39,6 @@ class WelcomeScreen extends StatelessWidget {
         return;
       }
 
-      // Success case - navigate to AlarmScreen
       if (context.mounted) {
         Navigator.push(
           context,
@@ -99,7 +97,7 @@ class WelcomeScreen extends StatelessWidget {
                   btnName: AppStrings.homeBtn, 
                   btnImg: '',
                   onPressed: () {
-                    // Handle home button press
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> AlarmScreen(location: AppStrings.selectedLocValue,)));
                   },
                 ),
               ],
